@@ -111,7 +111,7 @@ public class Deck
         
         for(int i = 1; i < 5; i++)
         {
-            for(int j = 2; j < 14; j++)
+            for(int j = 1; j < 14; j++)
             {
                 deck[z] = new CardObject(j,i);
                 
