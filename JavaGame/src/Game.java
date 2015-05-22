@@ -20,11 +20,14 @@ public class Game {
         System.out.println("How many decks would you like to use?");
         int numofdecks = scan.nextInt();
         
-        ArrayList<CardObject> deck = new ArrayList<CardObject>();
+        ArrayList<Deck> deck = new ArrayList<Deck>();
         for(int i = 0; i < numofdecks; i ++)
         {
-            deck.add(Deck);
+            Deck dec = new Deck();
+            dec.Shuffle();
+            deck.add(i,dec);
         }
+         CardObject players [][] = new  CardObject[numofplayers+1][10];
         
         
         
