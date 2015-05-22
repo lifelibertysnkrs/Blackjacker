@@ -14,9 +14,12 @@ public class CardObject
    private String suit;
    private int FaceTracker;
    private int SuitTracker;
+   private boolean FaceUp;
    
    public CardObject(int n, int s)
    {
+       FaceUp = true;
+       
        if(n >= 2 && n <=10)
        {
            facevalue = "" + n;
@@ -72,5 +75,19 @@ public class CardObject
    public String toString()
    {
        return "" + facevalue + " of " + suit;
+   }
+   
+   public boolean getFaceUp()
+   {
+       //Returns the current status of FaceUp
+       return FaceUp;
+   }
+   
+   public boolean ChangeFaceUp()
+   {
+       //If FaceUp is true it will become false, and if false true
+       if(this.getFaceUp() == true)
+           return FaceUp = false;
+       return FaceUp = true;
    }
 }
