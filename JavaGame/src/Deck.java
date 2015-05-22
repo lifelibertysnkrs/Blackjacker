@@ -123,4 +123,9 @@ public class Deck
         
         cards = 52;
     }
+    
+    public int getCard()
+    {
+        return cards;
+    }
 }
