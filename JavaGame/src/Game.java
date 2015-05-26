@@ -36,6 +36,11 @@ public class Game {
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
+<<<<<<< Updated upstream
+=======
+         CardObject players [][] = new  CardObject[numofplayers+1][10];
+         
+>>>>>>> Stashed changes
         
         
         System.out.println("I now know the cards on the table");
