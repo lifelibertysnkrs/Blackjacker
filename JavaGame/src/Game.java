@@ -21,6 +21,7 @@ public class Game {
         int numofdecks = scan.nextInt();
         System.out.println("lol, too bad, I can only handle one deck.");
         Deck deck = new Deck();
+        deck.Shuffle();
         
         Player players [] = new  Player[numofplayers];
         
