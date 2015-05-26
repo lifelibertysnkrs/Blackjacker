@@ -14,8 +14,13 @@ import java.util.ArrayList;
 public class Player {
     private ArrayList<CardObject> hand = new ArrayList<CardObject>();
     public Deck deck;
-    public Player(boolean isDealer, Deck deck1){
-        boolean DealerStatus = isDealer;
+    private boolean DealerStatus;
+    boolean bust;
+    boolean quit;
+    public Player(boolean isDealer, Deck deck1, boolean isBust, boolean isQuit){
+        DealerStatus = isDealer;
+        bust = isBust;
+        quit = isQuit;
         deck = deck1;
         hand.add(deck.Draw());
         hand.add(deck.Draw());
@@ -36,10 +41,21 @@ public class Player {
          String handstring = "";
          for(CardObject card:hand){
              handstring += card.toString();
+             
              handstring += " and ";
              
          }
+         if(DealerStatus){
+             handstring = hand.get(0).toString() + " and one hidden card";
+         }
          return handstring;
+         
+     
      }
-    
+    public boolean getBust(){
+        return bust;
+    }
+    public boolean getQuit(){
+        return quit;
+    }
 }

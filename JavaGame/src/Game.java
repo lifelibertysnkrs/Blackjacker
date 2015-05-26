@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Andrew Erickson
+ * 
  */
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -23,36 +23,33 @@ public class Game {
         Deck deck = new Deck();
         
         Player players [] = new  Player[numofplayers];
+        
         for(int i = 0; i<numofplayers-1; i++){
-            players[i] = new Player(false, deck);
+            players[i] = new Player(false, deck, false, false);
         }
         
-        players[numofplayers-1] = new Player(true, deck);
-        
+        players[numofplayers-1] = new Player(true, deck, false, false);
+        Player dealer = players[numofplayers-1];
         System.out.println("Analyzing visual field..."); 
         try {
             Thread.sleep(4000);        
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
-        System.out.println("Taming the rhinos...");        
-        try {
-            Thread.sleep(4000);        
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
-        System.out.println("Solving Fermat's last theorem..."); 
-        try {
-            Thread.sleep(4000);        
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
+        
+        
         System.out.println("I now know the cards on the table");
-        for(int i = 0; i<numofplayers;i++){
+        for(int i = 0; i<numofplayers - 1;i++){
         System.out.println("Player " + i + " has " + players[i].getHand());
         
         }
+        
+        System.out.println("The dealer has " + dealer.getHand());
+        int quitters = 0;
+        while(quitters<numofplayers){
         for(int i = 0; i<numofplayers;i++){
+         
+        if(!players[i].getBust() && !players[i].getQuit()){
         System.out.println("Player " + i + " do you want to hit? Enter y for yes, punch Kevin really hard for no");
         try {
             Thread.sleep(2000);        
@@ -67,12 +64,44 @@ public class Game {
         if(hitnohit.equals("y") || hitnohit.equals("Y")){
             players[i].hit();
             System.out.println("Confirmed. I have indeed hit it.");
+            
         }else{
             System.out.println("wimp.");
+            quitters++;
+            
         }
-            System.out.println("Your count is " + players[i].getCount());
+            System.out.println("Your cards are " + players[i].getHand());
+            
+                }
+            
+            }
+            
         }
-        System.out.println("That's all I can do right now. By the way, I don't do any audio analysis. Now you just look silly.");
+       System.out.println("And now the dealer draws. His fully revealed hand is" + dealer.getHand());
+            while(dealer.getCount()<17){
+                dealer.hit();
+                System.out.println("The dealer has drawn, his hand is now" + dealer.getHand());
+                if(dealer.getCount()>21){
+                    System.out.println("The dealer has busted, You win!");
+                }
+            
+                 
+       }
+            for(int i = 0; i<numofplayers - 1;i++){
+                if(players[i].getBust()){
+                    System.out.println("Player " + i + "since you busted, you lose");
+                
+                }else if((21-players[i].getCount())<=(21-dealer.getCount())){
+                    System.out.println("You beat the dealer, you win, player " + i +"!" );
+                    
+                }else if((21-players[i].getCount())>(21-dealer.getCount())){
+                    System.out.println("The dealer beat you, you lose, player " + i +".");
+                }else{
+                    System.out.println("Rahul probably messed something up. Beat him mercilessly.");
+                }
+                
+            }
+    }
 }
         
         
@@ -81,6 +110,4 @@ public class Game {
         
         
         
-        
-    }
-
+   
