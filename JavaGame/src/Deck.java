@@ -46,30 +46,39 @@ public class Deck
         int i = 0;
         while(deck.size() > 0)
         {
+            //A random card is selected from the original deck and added to the
+            //the new DummyDeck while being removed from the old deck, this
+            //randomizes the order in the DummyDeck.
             int Random = (int) Math.random()*(deck.size());
             DummyDeck.add(deck.remove(Random));   
         }
-        
+        //Now the original deck is equal to the DummyDeck
         deck = DummyDeck;
     }
 
     public CardObject Draw()
     {
         ArrayList<CardObject> DummyDeck = new ArrayList<CardObject>();
-        
+        //A DummyDeck is created
         for(int i = 0; i < deck.size(); i++)
         {
+            //The DummyDeck now has all of the same card values as the original
+            //deck.
             DummyDeck.add(deck.get(i));
         }
-        
+        //The card drawn is removed.
         deck.remove(0);
         
+        cards = deck.size();
+        //The card drawn is returned.
         return DummyDeck.get(0);
     }
     
     
     public void Repopulate()
     {
+        //The deck is remade the way it's made in the constructor
+        //it is not preshuffled.
         for(int i = 1; i < 5; i++)
         {
             for(int j = 1; j < 14; j++)
@@ -85,6 +94,7 @@ public class Deck
     
     public int getCard()
     {
+        //returns the amount of cards in the deck.
         return cards;
     }
 }
