@@ -15,11 +15,11 @@ public class CardObject
    private int FaceTracker;
    private int SuitTracker;
    private boolean FaceUp;
-   
+   private int realValue;
    public CardObject(int n, int s)
    {
        FaceUp = true;
-       
+       realValue = n;
        if(n >= 2 && n <=10)
        {
            facevalue = "" + n;
@@ -89,5 +89,9 @@ public class CardObject
        if(this.getFaceUp() == true)
            return FaceUp = false;
        return FaceUp = true;
+     
+   }
+   public int getValue(){
+       return realValue;
    }
 }
