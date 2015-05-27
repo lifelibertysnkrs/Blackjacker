@@ -29,6 +29,8 @@ public class Game {
         players[numofplayers-1] = new Player(true, deck, false, false);
         Player dealer = players[numofplayers-1];
         System.out.println("Analyzing visual field..."); 
+        System.out.println("");
+        System.out.println("");
         try {
             Thread.sleep(2500);        
         } catch(InterruptedException ex) {
