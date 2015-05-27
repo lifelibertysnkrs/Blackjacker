@@ -55,6 +55,8 @@ public class Game {
             while(players[i].getBust() != true && players[i].getCount() != 21 && players[i].getQuit() != true){ 
                     
         if(!players[i].getBust() && !players[i].getQuit()){
+            System.out.println("");
+            System.out.println("");
         System.out.println("Player " + i + " do you want to hit? Enter y for yes.");
             System.out.println("");
         try {
