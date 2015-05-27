@@ -19,7 +19,7 @@ public class Game {
         
         Deck deck = new Deck();
         deck.Shuffle();
-        
+        numofplayers ++;
         Player players [] = new  Player[numofplayers];
         
         for(int i = 0; i<numofplayers-1; i++){
@@ -85,6 +85,11 @@ public class Game {
         if(players[i].getCount()>21){
             System.out.println("You bust and lose!");
             players[i].buster();
+        }
+        if(players[i].getCount()==21)
+        {
+            System.out.println("You hit 21.");
+           
         }
             System.out.println("Your cards are " + players[i].getHand());
             
