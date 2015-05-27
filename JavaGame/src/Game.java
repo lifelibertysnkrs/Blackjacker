@@ -42,6 +42,7 @@ public class Game {
         
         
         System.out.println("I now know the cards on the table");
+        System.out.println("");
         for(int i = 0; i<numofplayers - 1;i++){
         System.out.println("Player " + i + " has " + players[i].getHand());
             System.out.println("");
@@ -56,6 +57,7 @@ public class Game {
          
         if(!players[i].getBust() && !players[i].getQuit()){
         System.out.println("Player " + i + " do you want to hit? Enter y for yes, punch Kevin really hard for no");
+            System.out.println("");
         try {
             Thread.sleep(2000);        
         } catch(InterruptedException ex) {
@@ -63,15 +65,19 @@ public class Game {
         }
         System.out.println("Just kidding, type n for no.");
         String hitnohit = scan.nextLine();
+            System.out.println("");
         System.out.println("I forgot to mention, I use audio analysis along with keyboard input. Try loudly saying BANG BANG SOSA for hit, or DUNKAAY for not hit while typing.");
         hitnohit = scan.nextLine();
         System.out.println(hitnohit);
         if(hitnohit.equals("y") || hitnohit.equals("Y")){
             players[i].hit();
             System.out.println("Confirmed. I have indeed hit it. Your cards are " + players[i].getHand());
+            System.out.println("");
+            System.out.println("");
             
         }else{
             System.out.println("wimp.");
+            System.out.println("");
             quitters++;
             players[i].quitter();
         }
