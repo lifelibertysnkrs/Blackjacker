@@ -17,9 +17,11 @@ public class Game {
         System.out.println("> I AM MASSAR. \n I can currently simulate a game of blackjack. Eventually, I will use a Graphical User Interface and \n artificial intelligence to improve your chances of winning.");
         System.out.println("> How many players are there?");
         int numofplayers = scan.nextInt();
+        System.out.println("");
         System.out.println("How many decks would you like to use?");
         int numofdecks = scan.nextInt();
         System.out.println("lol, too bad, I can only handle one deck.");
+        System.out.println("");
         Deck deck = new Deck();
         deck.Shuffle();
         
