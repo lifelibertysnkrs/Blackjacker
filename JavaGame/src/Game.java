@@ -50,7 +50,7 @@ public class Game {
         while(quitters<numofplayers){
             
         for(int i = 0; i<numofplayers;i++){
-            while(players[i].getBust() != true){ 
+            while(players[i].getBust() != true && players[i].getCount() != 21 && players[i].getQuit() != true){ 
                     
         if(!players[i].getBust() && !players[i].getQuit()){
         System.out.println("Player " + i + " do you want to hit? Enter y for yes.");
