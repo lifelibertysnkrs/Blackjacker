@@ -44,10 +44,12 @@ public class Game {
         System.out.println("I now know the cards on the table");
         for(int i = 0; i<numofplayers - 1;i++){
         System.out.println("Player " + i + " has " + players[i].getHand());
+            System.out.println("");
         
         }
         
         System.out.println("The dealer has " + dealer.getHand());
+        System.out.println("");
         int quitters = 0;
         while(quitters<numofplayers){
         for(int i = 0; i<numofplayers;i++){
