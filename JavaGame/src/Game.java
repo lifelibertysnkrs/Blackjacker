@@ -76,7 +76,7 @@ public class Game {
             players[i].quitter();
         }
         if(players[i].getCount()>21){
-            System.out.println("You busted and lose!");
+            System.out.println("You bust and lose!");
             players[i].buster();
         }
             System.out.println("Your cards are " + players[i].getHand());
