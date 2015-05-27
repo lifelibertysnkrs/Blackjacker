@@ -89,12 +89,44 @@ public class Deck
             
         }
         
-        cards = 52;
+        cards = deck.size();
     }
     
-    public int getCard()
+    public ArrayList<CardObject> mergeDecks(ArrayList<Deck> d)
     {
-        //returns the amount of cards in the deck.
+        //You create an ArrayList of the extra decks, which are then added to
+        //this deck
+        ArrayList<CardObject> DummyDeck = new ArrayList<CardObject>();
+        //A DummyDeck is created
+        for(int i = 0; i < deck.size(); i++)
+        {
+            //The DummyDeck now has all of the same card values as the original
+            //deck.
+            DummyDeck.add(deck.get(i));
+        }
+        
+        //The first loop cycles through each deck in the ArrayList of decks
+        for(int i = 0; i < d.size(); i++)
+        {
+            //The second for loop cycles through the cards in each deck in the ArrayList of decks
+            for(int j = 0; j < d.get(i).returnCard(); j++)
+            {
+                DummyDeck.add(d.get(i).getCard(j));
+            }
+        }
+        
+        return deck = DummyDeck;
+    }
+    
+    public int returnCard()
+    {
+        //returns the amount of cards in the deck
         return cards;
+    }
+    
+    public CardObject getCard(int i)
+    {
+        //returns the card at index i
+        return deck.get(i);
     }
 }
