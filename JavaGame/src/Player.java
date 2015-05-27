@@ -58,4 +58,10 @@ public class Player {
     public boolean getQuit(){
         return quit;
     }
+    public void buster(){
+        bust = true;
+    }
+    public void quitter(){
+        quit = true;
+    }
 }
