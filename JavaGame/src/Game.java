@@ -13,12 +13,35 @@ public class Game {
         System.out.println("");
         System.out.println("How many decks would you like to use?");
         int numofdecks = scan.nextInt();
-        if(numofdecks > 1)
-        System.out.println("lol, too bad, I can only handle one deck.");
-        System.out.println("");
         
+        //The first deck object is created
         Deck deck = new Deck();
+            
+        if(numofdecks > 1)
+        {
+            //ArryList of deck objects is instantiated
+            ArrayList<Deck> d = new ArrayList<Deck>();
+            
+            //The ArrayList is filled with n - 1 decks because the of the decks
+            //has already been instantiated before
+            for(int i = 0; i < (numofdecks - 1); i++)
+            {
+                
+                Deck deck1 = new Deck();
+                
+                d.add(deck1);
+            }
+            
+            //The decks are merged with the mergeDecks method
+            deck.mergeDecks(d);
+        }
+        
+        
+        //The deck is shuffled
         deck.Shuffle();
+        
+        
+        
         
         Player players [] = new  Player[numofplayers];
         
