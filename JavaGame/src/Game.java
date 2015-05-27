@@ -50,6 +50,8 @@ public class Game {
         while(quitters<numofplayers){
             
         for(int i = 0; i<numofplayers;i++){
+            while(players[i].getBust() != true){ 
+                    
         if(!players[i].getBust() && !players[i].getQuit()){
         System.out.println("Player " + i + " do you want to hit? Enter y for yes.");
             System.out.println("");
@@ -84,7 +86,7 @@ public class Game {
             
                 }
             
-            }
+            }}
             
         }
        System.out.println("And now the dealer draws. His fully revealed hand is" + dealer.getHand());
