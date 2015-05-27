@@ -13,8 +13,10 @@ public class Game {
         System.out.println("");
         System.out.println("How many decks would you like to use?");
         int numofdecks = scan.nextInt();
+        if(numofdecks > 1)
         System.out.println("lol, too bad, I can only handle one deck.");
         System.out.println("");
+        
         Deck deck = new Deck();
         deck.Shuffle();
         
@@ -28,7 +30,7 @@ public class Game {
         Player dealer = players[numofplayers-1];
         System.out.println("Analyzing visual field..."); 
         try {
-            Thread.sleep(4000);        
+            Thread.sleep(2500);        
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
@@ -46,10 +48,10 @@ public class Game {
         System.out.println("");
         int quitters = 0;
         while(quitters<numofplayers){
+            
         for(int i = 0; i<numofplayers;i++){
-         
         if(!players[i].getBust() && !players[i].getQuit()){
-        System.out.println("Player " + i + " do you want to hit? Enter y for yes, punch Kevin really hard for no");
+        System.out.println("Player " + i + " do you want to hit? Enter y for yes.");
             System.out.println("");
         try {
             Thread.sleep(2000);        
