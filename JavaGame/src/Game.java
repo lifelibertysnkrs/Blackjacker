@@ -39,14 +39,8 @@ public class Game {
         
         //The deck is shuffled
         deck.Shuffle();
-<<<<<<< HEAD
-        
-        
-        
-        
-=======
+
         numofplayers ++;
->>>>>>> origin/master
         Player players [] = new  Player[numofplayers];
         
         for(int i = 0; i<numofplayers-1; i++){
