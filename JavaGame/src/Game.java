@@ -54,16 +54,16 @@ public class Game {
         System.out.println("Player " + i + " do you want to hit? Enter y for yes.");
             System.out.println("");
         try {
-            Thread.sleep(2000);        
+            Thread.sleep(100);        
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
-        System.out.println("Just kidding, type n for no.");
+        System.out.println("Type n for no.");
         String hitnohit = scan.nextLine();
             System.out.println("");
         System.out.println("I forgot to mention, I use audio analysis along with keyboard input. Try loudly saying BANG BANG SOSA for hit, or DUNKAAY for not hit while typing.");
         hitnohit = scan.nextLine();
-        System.out.println(hitnohit);
+
         if(hitnohit.equals("y") || hitnohit.equals("Y")){
             players[i].hit();
             System.out.println("Confirmed. I have indeed hit it. Your cards are " + players[i].getHand());
