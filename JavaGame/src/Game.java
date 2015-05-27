@@ -47,8 +47,8 @@ public class Game {
             players[i] = new Player(false, deck, false, false);
         }
         
-        players[numofplayers-1] = new Player(true, deck, false, false);
-        Player dealer = players[numofplayers-1];
+        players[numofplayers] = new Player(true, deck, false, false);
+        Player dealer = players[numofplayers];
         System.out.println("Analyzing visual field..."); 
         System.out.println("");
         System.out.println("");
@@ -78,7 +78,7 @@ public class Game {
         if(!players[i].getBust() && !players[i].getQuit()){
             System.out.println("");
             System.out.println("");
-        System.out.println("Player " + i + " do you want to hit? Enter y for yes.");
+        System.out.println("Player " + i + " do you want to hit? Your count is " + players[i].getCount() + ". Enter y for yes.");
             System.out.println("");
         try {
             Thread.sleep(100);        
@@ -88,8 +88,6 @@ public class Game {
         System.out.println("Type n for no.");
         String hitnohit = scan.nextLine();
             System.out.println("");
-        System.out.println("I forgot to mention, I use audio analysis along with keyboard input. Try loudly saying BANG BANG SOSA for hit, or DUNKAAY for not hit while typing.");
-        hitnohit = scan.nextLine();
 
         if(hitnohit.equals("y") || hitnohit.equals("Y")){
             players[i].hit();
@@ -113,6 +111,7 @@ public class Game {
            
         }
             System.out.println("Your cards are " + players[i].getHand());
+            System.out.println("The count of your cards is "+players[i].getCount());
             
                 }
             
