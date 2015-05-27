@@ -61,17 +61,21 @@ public class Game {
         }
         System.out.println("Just kidding, type n for no.");
         String hitnohit = scan.nextLine();
-        System.out.println("I forgot to mention, I use audio analysis along with keyboard input. Try loudly saying HIT, or NOT HIT while typing.");
+        System.out.println("I forgot to mention, I use audio analysis along with keyboard input. Try loudly saying BANG BANG SOSA for hit, or DUNKAAY for not hit while typing.");
         hitnohit = scan.nextLine();
         System.out.println(hitnohit);
         if(hitnohit.equals("y") || hitnohit.equals("Y")){
             players[i].hit();
-            System.out.println("Confirmed. I have indeed hit it.");
+            System.out.println("Confirmed. I have indeed hit it. Your cards are " + players[i].getHand());
             
         }else{
             System.out.println("wimp.");
             quitters++;
-            
+            players[i].quitter();
+        }
+        if(players[i].getCount()>21){
+            System.out.println("You busted and lose!");
+            players[i].buster();
         }
             System.out.println("Your cards are " + players[i].getHand());
             
@@ -86,6 +90,7 @@ public class Game {
                 System.out.println("The dealer has drawn, his hand is now" + dealer.getHand());
                 if(dealer.getCount()>21){
                     System.out.println("The dealer has busted, You win!");
+                    
                 }
             
                  
@@ -93,14 +98,16 @@ public class Game {
             for(int i = 0; i<numofplayers - 1;i++){
                 if(players[i].getBust()){
                     System.out.println("Player " + i + "since you busted, you lose");
-                
+                    break;
                 }else if((21-players[i].getCount())<=(21-dealer.getCount())){
                     System.out.println("You beat the dealer, you win, player " + i +"!" );
-                    
+                    break;
                 }else if((21-players[i].getCount())>(21-dealer.getCount())){
                     System.out.println("The dealer beat you, you lose, player " + i +".");
+                    break;
                 }else{
                     System.out.println("Rahul probably messed something up. Beat him mercilessly.");
+                    break;
                 }
                 
             }
