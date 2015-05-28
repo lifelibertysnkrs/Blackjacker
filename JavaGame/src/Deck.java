@@ -11,7 +11,7 @@
 import java.util.ArrayList;
 public class Deck 
 {
-    private ArrayList<CardObject> deck = new ArrayList<CardObject>();
+    private ArrayList<CardObject> deck = new ArrayList<>();
     private int cards;
     
     public Deck()
@@ -38,7 +38,7 @@ public class Deck
     {
         
         //A copy of the deck is created to transfer cards
-        ArrayList<CardObject> DummyDeck = new ArrayList<CardObject>();
+        ArrayList<CardObject> DummyDeck = new ArrayList<>();
         
         
         //Here every card of the array list is removed
@@ -49,7 +49,7 @@ public class Deck
             //A random card is selected from the original deck and added to the
             //the new DummyDeck while being removed from the old deck, this
             //randomizes the order in the DummyDeck.
-            int Random = (int) Math.random()*(deck.size());
+            int Random = (int) (Math.random() * (deck.size()));
             DummyDeck.add(deck.remove(Random));   
         }
         //Now the original deck is equal to the DummyDeck
@@ -58,13 +58,11 @@ public class Deck
 
     public CardObject Draw()
     {
-        ArrayList<CardObject> DummyDeck = new ArrayList<CardObject>();
-        //A DummyDeck is created
-        for(int i = 0; i < deck.size(); i++)
-        {
+        ArrayList<CardObject> DummyDeck = new ArrayList<>();
+        for (CardObject deck1 : deck) {
             //The DummyDeck now has all of the same card values as the original
             //deck.
-            DummyDeck.add(deck.get(i));
+            DummyDeck.add(deck1);
         }
         //The card drawn is removed.
         deck.remove(0);
@@ -96,22 +94,17 @@ public class Deck
     {
         //You create an ArrayList of the extra decks, which are then added to
         //this deck
-        ArrayList<CardObject> DummyDeck = new ArrayList<CardObject>();
-        //A DummyDeck is created
-        for(int i = 0; i < deck.size(); i++)
-        {
+        ArrayList<CardObject> DummyDeck = new ArrayList<>();
+        for (CardObject deck1 : deck) {
             //The DummyDeck now has all of the same card values as the original
             //deck.
-            DummyDeck.add(deck.get(i));
+            DummyDeck.add(deck1);
         }
         
-        //The first loop cycles through each deck in the ArrayList of decks
-        for(int i = 0; i < d.size(); i++)
-        {
+        for (Deck d1 : d) {
             //The second for loop cycles through the cards in each deck in the ArrayList of decks
-            for(int j = 0; j < d.get(i).returnCard(); j++)
-            {
-                DummyDeck.add(d.get(i).getCard(j));
+            for (int j = 0; j < d1.returnCard(); j++) {
+                DummyDeck.add(d1.getCard(j));
             }
         }
         
