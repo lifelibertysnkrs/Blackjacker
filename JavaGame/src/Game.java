@@ -80,13 +80,14 @@ public class Game {
             System.out.println("");
         System.out.println("Player " + i + " do you want to hit? Your count is " + players[i].getCount() + ". Enter y for yes.");
             System.out.println("");
+            String hitnohit = scan.nextLine();
         try {
             Thread.sleep(1000);        
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
         System.out.println("Type n for no.");
-        String hitnohit = scan.nextLine();
+         hitnohit = scan.nextLine();
             System.out.println(hitnohit);
             System.out.println("");
 
@@ -96,7 +97,7 @@ public class Game {
             System.out.println("");
             System.out.println("");
             
-        }else{
+        }if(hitnohit.equals("n") || hitnohit.equals("N")){
             System.out.println("wimp.");
             System.out.println("");
             quitters++;
