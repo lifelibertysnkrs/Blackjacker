@@ -40,14 +40,14 @@ public class Game {
         //The deck is shuffled
         deck.Shuffle();
 
-        numofplayers ++;
-        Player players [] = new  Player[numofplayers];
+        numofplayers ++;    // Adds a spot for the dealer at the end of the players array
+        Player players [] = new  Player[numofplayers];      // Creates the array of players and dealer
         
-        for(int i = 0; i<numofplayers-1; i++){
+        for(int i = 0; i<numofplayers-1; i++){      // Sets up all of the players in the array except for the last one as players
             players[i] = new Player(false, deck, false, false);
         }
         
-        players[numofplayers-1] = new Player(true, deck, false, false);
+        players[numofplayers-1] = new Player(true, deck, false, false); // Makes the last player the dealer
         Player dealer = players[numofplayers-1];
         System.out.println("Analyzing visual field..."); 
         System.out.println("");
