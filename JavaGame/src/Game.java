@@ -97,7 +97,7 @@ public class Game {
             System.out.println("");
             System.out.println("");
             
-        }if(hitnohit.equals("n") || hitnohit.equals("N")){
+        }else{
             System.out.println("wimp.");
             System.out.println("");
             quitters++;
