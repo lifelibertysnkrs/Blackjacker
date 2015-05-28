@@ -81,12 +81,13 @@ public class Game {
         System.out.println("Player " + i + " do you want to hit? Your count is " + players[i].getCount() + ". Enter y for yes.");
             System.out.println("");
         try {
-            Thread.sleep(100);        
+            Thread.sleep(1000);        
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
         System.out.println("Type n for no.");
         String hitnohit = scan.nextLine();
+            System.out.println(hitnohit);
             System.out.println("");
 
         if(hitnohit.equals("y") || hitnohit.equals("Y")){
