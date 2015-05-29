@@ -29,7 +29,7 @@ public class Player {
     public int getCount(){
         int count = 0;
         for(CardObject card:hand){
-           count += card.getValue(); 
+           count += card.getPointVal(); 
         }
         return count;
     

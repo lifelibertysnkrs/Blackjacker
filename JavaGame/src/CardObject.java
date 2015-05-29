@@ -19,7 +19,6 @@ public class CardObject
    public CardObject(int n, int s)
    {
        FaceUp = true;
-       realValue = n;
        if(n >= 2 && n <=10)
        {
            facevalue = "" + n;
@@ -89,9 +88,39 @@ public class CardObject
        if(this.getFaceUp() == true)
            return FaceUp = false;
        return FaceUp = true;
-     
    }
-   public int getValue(){
-       return realValue;
+   
+   public int getPointVal()
+   {
+       
+       //uses the FaceTracker value to get the face of the card
+       //returns appropriate value based on face
+       if(FaceTracker == 1)
+           return 1;
+       if(FaceTracker == 2)
+           return 2;
+       if(FaceTracker == 3)
+           return 3;
+       if(FaceTracker == 4)
+           return 4;
+       if(FaceTracker == 5)
+           return 5;
+       if(FaceTracker == 6)
+           return 6;
+       if(FaceTracker == 7)
+           return 7;
+       if(FaceTracker == 8)
+           return 8;
+       if(FaceTracker == 9)
+           return 9;
+       if(FaceTracker == 10)
+           return 10;
+       if(FaceTracker == 11)
+           return 10;
+       if(FaceTracker == 12)
+           return 10;
+       
+       return 10;
+       
    }
 }
