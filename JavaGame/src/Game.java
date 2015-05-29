@@ -71,6 +71,9 @@ public class Game {
         System.out.println("");
         int quitters = 0;
         while(quitters<numofplayers){
+            /*
+            
+            */
             
         for(int i = 0; i<numofplayers;i++){
             while(players[i].getBust() != true && players[i].getCount() != 21 && players[i].getQuit() != true){ 
@@ -120,6 +123,7 @@ public class Game {
             }}
             
         }
+       players[numofplayers-1].DealerSwitch();
        System.out.println("And now the dealer draws. His fully revealed hand is" + dealer.getHand());
             while(dealer.getCount()<17){
                 dealer.hit();

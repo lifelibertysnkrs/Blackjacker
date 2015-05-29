@@ -15,7 +15,7 @@ public class CardObject
    private int FaceTracker;
    private int SuitTracker;
    private boolean FaceUp;
-   private int realValue;
+   
    public CardObject(int n, int s)
    {
        FaceUp = true;

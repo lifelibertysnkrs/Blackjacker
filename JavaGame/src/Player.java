@@ -26,6 +26,7 @@ public class Player {
         hand.add(deck.Draw());
             
         }
+    
     public int getCount(){
         int count = 0;
         for(CardObject card:hand){
@@ -63,5 +64,12 @@ public class Player {
     }
     public void quitter(){
         quit = true;
+    }
+    
+    public void DealerSwitch()
+    {
+        if(DealerStatus == true)
+            DealerStatus = false;
+        DealerStatus = true;
     }
 }
