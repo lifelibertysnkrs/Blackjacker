@@ -101,10 +101,12 @@ public class Game {
             System.out.println("");
             quitters++;
             players[i].quitter();
+            
         }
         if(players[i].getCount()>21){
             System.out.println("You bust and lose!");
             players[i].buster();
+            quitters++;
         }
         if(players[i].getCount()==21)
         {
@@ -113,25 +115,32 @@ public class Game {
         }
             System.out.println("Your cards are " + players[i].getHand());
             System.out.println("The count of your cards is "+players[i].getCount());
-            
+            players[i].quitter();
+            quitters++;
                 }
             
             }}
             
         
-       players[numofplayers-1].DealerSwitch();
+       dealer.DealerSwitch();
        System.out.println("And now the dealer draws. His fully revealed hand is " + dealer.getHand());
-            while(dealer.getCount()<17){
-                players[numofplayers-1].hit();
+            while(dealer.getCount() < 17){
+                dealer.hit();
                 System.out.println("The dealer has drawn, his hand is now " + dealer.getHand());
-                if(dealer.getCount()>21){
-                    System.out.println("The dealer has busted, You win!");
+                System.out.println("The dealer's count is " + dealer.getCount());
+                
                     
-                }}
+                }
+            
+            quitters++;
+            System.out.println(quitters);
             
                  
        }
             for(int i = 0; i<numofplayers - 1;i++){
+                if(dealer.getCount()>21){
+                    System.out.println("The dealer has busted, You win!");
+                }
                 if(players[i].getBust()){
                     System.out.println("Player " + i + "since you busted, you lose");
                     break;
@@ -147,6 +156,7 @@ public class Game {
                 }
                 
             }
-            System.out.println("Rahul probably messed something up. Beat him mercilessly.");
+           
     }
 }
+
