@@ -75,7 +75,7 @@ public class Game {
             
             */
             
-        for(int i = 0; i<numofplayers;i++){
+        for(int i = 0; i<numofplayers-1;i++){
             while(players[i].getBust() != true && players[i].getCount() != 21 && players[i].getQuit() != true){ 
                     
         if(!players[i].getBust() && !players[i].getQuit()){
