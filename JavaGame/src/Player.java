@@ -70,8 +70,7 @@ public class Player {
     {
         if(DealerStatus == true)
             DealerStatus = false;
-        else{
-            DealerStatus = true;
+        
         }
     }
 }
