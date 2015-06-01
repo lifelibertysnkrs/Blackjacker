@@ -70,7 +70,7 @@ public class Game {
         System.out.println("The dealer has " + dealer.getHand());
         System.out.println("");
         int quitters = 0;
-        while(quitters<numofplayers){
+        while(quitters<numofplayers-1){
             /*
             
             */
@@ -118,16 +118,16 @@ public class Game {
             
             }}
             
-        }
+        
        players[numofplayers-1].DealerSwitch();
-       System.out.println("And now the dealer draws. His fully revealed hand is" + dealer.getHand());
+       System.out.println("And now the dealer draws. His fully revealed hand is " + dealer.getHand());
             while(dealer.getCount()<17){
-                dealer.hit();
-                System.out.println("The dealer has drawn, his hand is now" + dealer.getHand());
+                players[numofplayers-1].hit();
+                System.out.println("The dealer has drawn, his hand is now " + dealer.getHand());
                 if(dealer.getCount()>21){
                     System.out.println("The dealer has busted, You win!");
                     
-                }
+                }}
             
                  
        }
