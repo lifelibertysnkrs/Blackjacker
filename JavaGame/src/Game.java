@@ -13,7 +13,7 @@ public class Game {
         System.out.println("");
         System.out.println("How many decks would you like to use?");
         int numofdecks = scan.nextInt();
-        
+        scan.nextLine();
         //The first deck object is created
         Deck deck = new Deck();
             
@@ -83,14 +83,10 @@ public class Game {
             System.out.println("");
         System.out.println("Player " + i + " do you want to hit? Your count is " + players[i].getCount() + ". Enter y for yes.");
             System.out.println("");
-            String hitnohit = scan.nextLine();
-        try {
-            Thread.sleep(1000);        
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
+    
+        
         System.out.println("Type n for no.");
-         hitnohit = scan.nextLine();
+         String hitnohit = scan.nextLine();
             System.out.println(hitnohit);
             System.out.println("");
 
