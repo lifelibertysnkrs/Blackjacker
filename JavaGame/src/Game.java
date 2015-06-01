@@ -174,6 +174,6 @@ public class Game {
             Thread.currentThread().interrupt();
         }
             System.out.println("");
-            System.out.println("Rahul probably messed something up. Beat him mercilessly.");
+           // System.out.println("Rahul probably messed something up. Beat him mercilessly.");
     }
 }
