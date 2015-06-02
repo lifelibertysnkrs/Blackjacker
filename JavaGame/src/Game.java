@@ -53,7 +53,7 @@ public class Game {
         System.out.println("");
         System.out.println("");
         try {
-            Thread.sleep(1500);        
+            Thread.sleep(2500);        
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
@@ -101,10 +101,12 @@ public class Game {
             System.out.println("");
             quitters++;
             players[i].quitter();
+            
         }
         if(players[i].getCount()>21){
             System.out.println("You bust and lose!");
             players[i].buster();
+            quitters++;
         }
         if(players[i].getCount()==21)
         {
@@ -112,62 +114,49 @@ public class Game {
            
         }
             System.out.println("Your cards are " + players[i].getHand());
-            System.out.println("");
             System.out.println("The count of your cards is "+players[i].getCount());
-            System.out.println("");
-            System.out.println("");
-            
+            players[i].quitter();
+            quitters++;
                 }
             
             }}
             
         
-       players[numofplayers-1].DealerSwitch();
+       dealer.DealerSwitch();
        System.out.println("And now the dealer draws. His fully revealed hand is " + dealer.getHand());
-            System.out.println("");
-            try {
-            Thread.sleep(2500);        
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
-            while(dealer.getCount()<17){
-                players[numofplayers-1].hit();
+            while(dealer.getCount() < 17){
+                dealer.hit();
                 System.out.println("The dealer has drawn, his hand is now " + dealer.getHand());
-                System.out.println("");
-                try {
-            Thread.sleep(2500);        
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
-                if(dealer.getCount()>21){
-                    System.out.println("The dealer has busted, You win!");
-                    System.out.println("");
-                    try {
-            Thread.sleep(2500);        
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
+                System.out.println("The dealer's count is " + dealer.getCount());
+                
                     
-                }}
+                }
+            
+            quitters++;
+            System.out.println(quitters);
             
                  
        }
             for(int i = 0; i<numofplayers - 1;i++){
-                if(players[i].getBust()){
+                if(dealer.getCount()>21){
+                    System.out.println("The dealer has busted, You win!");
+                }
+                else if(players[i].getBust()){
                     System.out.println("Player " + i + "since you busted, you lose");
-                    break;
+                    
                 }else if((21-players[i].getCount())<=(21-dealer.getCount())){
                     System.out.println("You beat the dealer, you win, player " + i +"!" );
-                    break;
+                    
                 }else if((21-players[i].getCount())>(21-dealer.getCount())){
                     System.out.println("The dealer beat you, you lose, player " + i +".");
-                    break;
+                    
                 }else{
                     System.out.println("Rahul probably messed something up. Beat him mercilessly.");
-                    break;
+                    
                 }
                 
             }
+<<<<<<< HEAD
             try {
             Thread.sleep(3500);        
         } catch(InterruptedException ex) {
@@ -176,5 +165,9 @@ public class Game {
             System.out.println("");
            //
             System.out.println("Rahul probably messed something up. Beat him mercilessly.");
+=======
+           
+>>>>>>> origin/master
     }
 }
+
