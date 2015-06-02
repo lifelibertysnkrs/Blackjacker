@@ -39,9 +39,7 @@ public class Game {
         
         //The deck is shuffled
         deck.Shuffle();
-        int a = 0;
-        while(a == 0)
-        {
+
         numofplayers ++;    // Adds a spot for the dealer at the end of the players array
         Player players [] = new  Player[numofplayers];      // Creates the array of players and dealer
         
@@ -123,7 +121,7 @@ public class Game {
             
             }}
             
-       
+        
        players[numofplayers-1].DealerSwitch();
        System.out.println("And now the dealer draws. His fully revealed hand is " + dealer.getHand());
             System.out.println("");
@@ -132,7 +130,6 @@ public class Game {
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
-            
             while(dealer.getCount()<17){
                 players[numofplayers-1].hit();
                 System.out.println("The dealer has drawn, his hand is now " + dealer.getHand());
@@ -178,20 +175,5 @@ public class Game {
         }
             System.out.println("");
            // System.out.println("Rahul probably messed something up. Beat him mercilessly.");
-            System.out.println("Do you wish to play again? Enter y for yes.");
-            System.out.println("");
-    
-        
-        System.out.println("Type n for no.");
-         String hitnohit = scan.nextLine();
-            System.out.println(hitnohit);
-            System.out.println("");
-
-        if(hitnohit.equals("y") || hitnohit.equals("Y"))
-            a = 0;
-        else
-            a = -1;
-    }
-        
     }
 }
