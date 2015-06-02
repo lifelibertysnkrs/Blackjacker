@@ -141,7 +141,7 @@ public class Game {
                 if(dealer.getCount()>21){
                     System.out.println("The dealer has busted, You win!");
                 }
-                if(players[i].getBust()){
+                else if(players[i].getBust()){
                     System.out.println("Player " + i + "since you busted, you lose");
                     
                 }else if((21-players[i].getCount())<=(21-dealer.getCount())){
