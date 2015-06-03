@@ -7,7 +7,10 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("> I AM MASSAR. \n I can currently simulate a game of blackjack. Eventually, I will use a Graphical User Interface and \n artificial intelligence to improve your chances of winning.");
+       // System.out.println("> I AM MASSAR. \n I can currently simulate a game of blackjack. Eventually, I will use a Graphical User Interface and \n artificial intelligence to improve your chances of winning.");
+        System.out.println("Lets play some BlackJack");
+        System.out.println("");
+        System.out.println("");
         System.out.println("> How many players are there?");
         int numofplayers = scan.nextInt();
         System.out.println("");
@@ -168,12 +171,22 @@ public class Game {
                 }
                 
             }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
             try {
             Thread.sleep(3500);        
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
             System.out.println("");
+<<<<<<< Updated upstream
            // System.out.println("Rahul probably messed something up. Beat him mercilessly.");
+=======
+           //
+            System.out.println("Rahul probably messed something up. Beat him mercilessly.");
+
+>>>>>>> Stashed changes
     }
 }
