@@ -7,7 +7,12 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        //System.out.println("> I AM MASSAR. \n I can currently simulate a game of blackjack. Eventually, I will use a Graphical User Interface and \n artificial intelligence to improve your chances of winning.");
+        
+       // System.out.println("> I AM MASSAR. \n I can currently simulate a game of blackjack. Eventually, I will use a Graphical User Interface and \n artificial intelligence to improve your chances of winning.");
+        System.out.println("Lets play some BlackJack");
+        System.out.println("");
+        System.out.println("");
+
         System.out.println("> How many players are there?");
         int numofplayers = scan.nextInt();
         System.out.println("");
@@ -126,7 +131,7 @@ public class Game {
        System.out.println("And now the dealer draws. His fully revealed hand is " + dealer.getHand());
             System.out.println("");
             try {
-            Thread.sleep(2500);        
+            Thread.sleep(3000);        
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
@@ -135,7 +140,7 @@ public class Game {
                 System.out.println("The dealer has drawn, his hand is now " + dealer.getHand());
                 System.out.println("");
                 try {
-            Thread.sleep(2500);        
+            Thread.sleep(3000);        
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
@@ -143,7 +148,7 @@ public class Game {
                     System.out.println("The dealer has busted, You win!");
                     System.out.println("");
                     try {
-            Thread.sleep(2500);        
+            Thread.sleep(3000);        
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
@@ -168,12 +173,18 @@ public class Game {
                 }
                 
             }
+
             try {
             Thread.sleep(3500);        
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
             System.out.println("");
+
            // System.out.println("Rahul probably messed something up. Beat him mercilessly.");
+
+           //
+            System.out.println("Rahul probably messed something up. Beat him mercilessly.");
+
     }
 }
