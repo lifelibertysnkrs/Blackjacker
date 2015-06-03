@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("> I AM MASSAR. \n I can currently simulate a game of blackjack. Eventually, I will use a Graphical User Interface and \n artificial intelligence to improve your chances of winning.");
+        //System.out.println("> I AM MASSAR. \n I can currently simulate a game of blackjack. Eventually, I will use a Graphical User Interface and \n artificial intelligence to improve your chances of winning.");
         System.out.println("> How many players are there?");
         int numofplayers = scan.nextInt();
         System.out.println("");
@@ -76,7 +76,7 @@ public class Game {
             */
             
         for(int i = 0; i<numofplayers-1;i++){
-            while(players[i].getBust() != true && players[i].getCount() != 21 && players[i].getQuit() != true){ 
+            if(players[i].getBust() != true && players[i].getCount() != 21 && players[i].getQuit() != true){ 
                     
         if(!players[i].getBust() && !players[i].getQuit()){
             System.out.println("");
@@ -120,7 +120,7 @@ public class Game {
                 }
             
             }}
-            
+        }     
         
        players[numofplayers-1].DealerSwitch();
        System.out.println("And now the dealer draws. His fully revealed hand is " + dealer.getHand());
@@ -151,7 +151,7 @@ public class Game {
                 }}
             
                  
-       }
+       
             for(int i = 0; i<numofplayers - 1;i++){
                 if(players[i].getBust()){
                     System.out.println("Player " + i + "since you busted, you lose");
