@@ -101,15 +101,16 @@ public class Game {
             System.out.println("");
             System.out.println("");
             
-        }else{
+        }else if(hitnohit.equals("n") || hitnohit.equals("N")){
             System.out.println("wimp.");
             System.out.println("");
             quitters++;
             players[i].quitter();
         }
         if(players[i].getCount()>21){
-            System.out.println("You bust and lose!");
+            System.out.println("You bust!");
             players[i].buster();
+            quitters++;
         }
         if(players[i].getCount()==21)
         {
@@ -157,16 +158,16 @@ public class Game {
             
                  
        
-            for(int i = 0; i<numofplayers - 1;i++){
+            for(int i = 0; i<numofplayers;i++){
                 if(players[i].getBust()){
                     System.out.println("Player " + i + "since you busted, you lose");
-                    break;
+                    
                 }else if((21-players[i].getCount())<=(21-dealer.getCount())){
                     System.out.println("You beat the dealer, you win, player " + i +"!" );
-                    break;
+                    
                 }else if((21-players[i].getCount())>(21-dealer.getCount())){
                     System.out.println("The dealer beat you, you lose, player " + i +".");
-                    break;
+                    
                 }else{
                     System.out.println("Rahul probably messed something up. Beat him mercilessly.");
                     break;
@@ -174,17 +175,10 @@ public class Game {
                 
             }
 
-            try {
-            Thread.sleep(3500);        
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
-            System.out.println("");
-
+            
            // System.out.println("Rahul probably messed something up. Beat him mercilessly.");
 
            //
-            System.out.println("Rahul probably messed something up. Beat him mercilessly.");
-
+            
     }
 }
